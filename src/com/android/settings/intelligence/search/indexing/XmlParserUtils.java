@@ -85,11 +85,7 @@ public class XmlParserUtils {
             // It's a resource
             try  {
                 final int resValue = Integer.parseInt(keywordRes.substring(1));
-                if (DevicePolicyResourcesUtils.isDevicePolicyResource(context, resValue)) {
-                    return DevicePolicyResourcesUtils.getDevicePolicyResource(context, resValue);
-                } else {
-                    return context.getString(resValue);
-                }
+                return context.getString(resValue);
             } catch (NumberFormatException e) {
                 Log.w(TAG, "Failed to parse keyword attribute, skipping " + keywordRes);
                 return null;
@@ -115,12 +111,7 @@ public class XmlParserUtils {
     @Nullable
     private static String getData(Context context, AttributeSet set, int[] attrs, int resId) {
         final TypedArray ta = context.obtainStyledAttributes(set, attrs);
-        String data;
-        if (DevicePolicyResourcesUtils.isDevicePolicyResource(context, ta, resId)) {
-            data = DevicePolicyResourcesUtils.getDevicePolicyResource(context, ta, resId);
-        } else {
-            data = ta.getString(resId);
-        }
+        String data = ta.getString(resId);
         ta.recycle();
         return data;
     }
