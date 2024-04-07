@@ -15,5 +15,5 @@
 -->
 
 <resources>
-    <color name="search_panel_background">@*android:color/surface_variant_dark</color>
+    <color name="search_panel_background">#242529</color>
 </resources>
