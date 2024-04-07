@@ -15,5 +15,5 @@
 -->
 
 <resources>
-    <color name="search_panel_background">#242529</color>
+    <color name="search_panel_background">@*android:color/monet_settings_search_bar_background</color>
 </resources>
